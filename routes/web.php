@@ -19,4 +19,5 @@ Route::get('/', function () {
 });
 
 // BBS
-Route::get('/bbs/', [BbsController::class, 'index']);
+Route::get('/bbs/', [BbsController::class, 'index'])->name('bbs.index');
+Route::post('/bbs/', [BbsController::class, 'create'])->name('bbs.create');

@@ -3,6 +3,7 @@
 
 <h1>Laravel BBS</h1>
 <form action="/bbs/" method="POST">
+@csrf
 お名前:<input name="name"><br>
 タイトル:<input name="title"><br>
 本文:<textarea name="body"></textarea><br>
