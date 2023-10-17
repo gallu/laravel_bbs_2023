@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BbsPostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,22 +13,9 @@ class BbsController extends Controller
         return view('bbs/index');
     }
     //
-    public function create(Request $req) {
-        // validate
-        $validator = Validator::make($req->all(), [
-            'name' => 'required|max:255',
-            'title' => '',
-            'body' => 'required',
-        ]);
-        if ($validator->fails()) {
-            \Log::debug('validate error');
-            return redirect()->route('bbs.index')
-                ->withErrors($validator)
-                ->withInput();
-        }
-
+    public function create(BbsPostRequest $req) {
         // バリデーション済みデータの取得
-        $validated = $validator->validated();
+        $validated = $req->validated();
         \Log::debug($validated);
         
         return redirect()->route('bbs.index');

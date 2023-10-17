@@ -12,3 +12,5 @@ composer.phar require nunomaduro/larastan --dev
 mkdir -p tools/php-cs-fixer
 composer.phar require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer --dev
 
+php artisan make:request BbsPostRequest
+
