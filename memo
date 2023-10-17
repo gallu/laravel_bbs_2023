@@ -14,3 +14,9 @@ composer.phar require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
 
 php artisan make:request BbsPostRequest
 
+php artisan make:migration create_table_bbs
+
+php artisan tinker
+DB::select('select 1');
+
+php artisan migrate
