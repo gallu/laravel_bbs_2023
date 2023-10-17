@@ -2,11 +2,19 @@
 <!doctype html>
 
 <h1>Laravel BBS</h1>
+@if ($errors->any())
+    <div>なんかエラーがあります！！</div>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
 <form action="/bbs/" method="POST">
 @csrf
-お名前:<input name="name"><br>
-タイトル:<input name="title"><br>
-本文:<textarea name="body"></textarea><br>
+お名前:<input name="name" value="{{ old('name') }}"><br>
+タイトル:<input name="title" value="{{ old('title') }}"><br>
+本文:<textarea name="body">{{ old('body') }}</textarea><br>
 <button>投稿する</button>
 </form>
 
