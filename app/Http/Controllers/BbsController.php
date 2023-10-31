@@ -24,6 +24,7 @@ class BbsController extends Controller
         \Log::debug($validated);
 
 
+
         return redirect()->route('bbs.index');
     }
 }

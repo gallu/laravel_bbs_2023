@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bbses', function (Blueprint $table) {
+        Schema::create('laravel_bbses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128)->comment('投稿者名');
             $table->string('title', 128)->comment('タイトル');
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bbses');
+        Schema::dropIfExists('laravel_bbses');
     }
 };
