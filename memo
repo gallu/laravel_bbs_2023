@@ -5,7 +5,7 @@ cd
 cd laravel_bbs/
 php artisan serve --host 0.0.0.0 --port 自分のport番号
 
-http://dev2.m-fr.net:port番号
+http://dev2.m-fr.net:port番号/bss
 
 composer.phar require nunomaduro/larastan --dev
 
@@ -21,3 +21,6 @@ DB::select('select 1');
 
 php artisan migrate
 (laravel_bbseesに名前変更しないとかも: BBSのほうで作ってた
+
+php artisan make:model　LaravelBbs
+
