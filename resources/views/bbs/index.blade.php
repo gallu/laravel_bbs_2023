@@ -19,4 +19,8 @@
 </form>
 
 <hr>
-{{ $test }}
+@foreach ($data as $datum)
+<p>名前:{{ $datum["name"] }}, タイトル:{{ $datum["title"] }} ({{ $datum["created_at"] }})
+<pre>{{ $datum["body"] }}</pre>
+<hr>    
+@endforeach
