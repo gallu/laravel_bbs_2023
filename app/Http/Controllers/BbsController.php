@@ -6,6 +6,7 @@ use App\Http\Requests\BbsPostRequest;
 use App\Models\LaravelBbs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class BbsController extends Controller
 {
@@ -19,7 +20,6 @@ class BbsController extends Controller
 // var_dump( $data->toArray() );
 
         $context = [
-            "test" => "AAA",
             "data" => $data->toArray(),
         ];
 
@@ -33,7 +33,7 @@ class BbsController extends Controller
         //　書き込みブラウザと書き込み元IPアドレスを把握する
         $validated['user_agent'] = $req->userAgent();
         $validated['from_ip'] = $req->header('X-Forwarded-For') ?? $req->ip();
-        \Log::debug($validated);
+        // \Log::debug($validated);
 
         // 書き込む
         LaravelBbs::create($validated);

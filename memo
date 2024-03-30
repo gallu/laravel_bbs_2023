@@ -20,7 +20,6 @@ php artisan tinker
 DB::select('select 1');
 
 php artisan migrate
-(laravel_bbseesに名前変更しないとかも: BBSのほうで作ってた
 
 php artisan make:model　LaravelBbs
 
